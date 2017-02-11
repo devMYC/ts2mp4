@@ -1,0 +1,21 @@
+{
+  "env": {
+    "node": true,
+    "es6": ture
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "rules": {
+    "comma-style": [ "warn", "first", { "exceptions": { "ArrayExpression": true, "ObjectExpression": true } } ],
+    "indent": [ "error", 2, { "SwitchCase": 1 } ],
+    "no-unused-vars": [ "warn", { "vars": "all", "args": "all", "argsIgnorePattern": "^_$" } ],
+    "quote-props": [ "error", "as-needed", { "keywords": false, "numbers": true } ],
+    "quotes": [ "warn", "single" ],
+    "semi": [ "warn", "never" ],
+  }
+}
