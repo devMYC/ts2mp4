@@ -10,6 +10,7 @@ const args = process.argv
 
 if (args.length < 4) {
   logger.warn('Videos directory and ffmpeg path are required')
+  process.exit(0)
 }
 
 const [ dir, ffmpeg, rmOriginal ] = args.length === 4 ? args.slice(-2) : args.slice(-3)

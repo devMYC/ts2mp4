@@ -2,7 +2,7 @@
 
 `node index.js DIR PATH [yes]`
 
-#### Params
+#### Arguments
 
 - DIR : Directory of videos
 - PATH : Path of ffmpeg executable
