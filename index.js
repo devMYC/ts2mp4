@@ -16,7 +16,7 @@ if (args.length < 4) {
 const [ dir, ffmpeg, rmOriginal ] = args.length === 4 ? args.slice(-2) : args.slice(-3)
 let files
 
-if (fs.existsSync(dir)) {
+if (fs.existsSync(dir) && fs.statSync(dir).isDirectory()) {
   files = fs.readdirSync(dir)
 } else {
   logger.warn('No such directory:', dir)
@@ -25,6 +25,9 @@ if (fs.existsSync(dir)) {
 
 if (!fs.existsSync(ffmpeg)) {
   logger.warn('Can not find:', ffmpeg)
+  process.exit(0)
+} else if (!fs.statSync(ffmpeg).isFile()) {
+  logger.warn(`${ffmpeg} is not a file`)
   process.exit(0)
 }
 
